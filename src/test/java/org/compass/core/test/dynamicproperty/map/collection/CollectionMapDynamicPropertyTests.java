@@ -22,30 +22,33 @@ import java.util.List;
 
 import org.compass.core.CompassSession;
 import org.compass.core.test.AbstractTestCase;
+import org.junit.Ignore;
 
 /**
  * @author kimchy
  */
+@Ignore
 public class CollectionMapDynamicPropertyTests extends AbstractTestCase {
 
-    @Override
-    protected String[] getMappings() {
-        return new String[]{"dynamicproperty/map/collection/mapping.cpm.xml"};
-    }
+	@Override
+	protected String[] getMappings() {
+		return new String[] { "dynamicproperty/map/collection/mapping.cpm.xml" };
+	}
 
-    public void testCollectionDynamicProperty() {
-        CompassSession session = openSession();
+	@Ignore
+	public void testCollectionDynamicProperty() {
+		CompassSession session = openSession();
 
-        A a = new A();
-        a.id = 1;
-        a.values = new HashMap<String, List<String>>();
-        a.values.put("tag1", Arrays.asList("value1", "value2"));
+		A a = new A();
+		a.id = 1;
+		a.values = new HashMap<String, List<String>>();
+		a.values.put("tag1", Arrays.asList("value1", "value2"));
 
-        session.save(a);
+		session.save(a);
 
-        assertEquals(1, session.find("tag1:value1").length());
-        assertEquals(1, session.find("tag1:value2").length());
+		assertEquals(1, session.find("tag1:value1").length());
+		assertEquals(1, session.find("tag1:value2").length());
 
-        session.close();
-    }
+		session.close();
+	}
 }

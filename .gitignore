@@ -125,5 +125,7 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-
-
+### generated script
+createDDL.jdbc
+dropDDL.jdbc
+TestGen*.java

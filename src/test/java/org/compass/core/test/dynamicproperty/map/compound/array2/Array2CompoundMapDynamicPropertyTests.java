@@ -20,47 +20,52 @@ import java.util.HashMap;
 
 import org.compass.core.CompassSession;
 import org.compass.core.test.AbstractTestCase;
+import org.junit.Ignore;
 
 /**
  * @author kimchy
  */
+@Ignore
 public class Array2CompoundMapDynamicPropertyTests extends AbstractTestCase {
 
-    @Override
-    protected String[] getMappings() {
-        return new String[]{"dynamicproperty/map/compound/array2/mapping.cpm.xml"};
-    }
+	@Override
+	protected String[] getMappings() {
+		return new String[] { "dynamicproperty/map/compound/array2/mapping.cpm.xml" };
+	}
 
-    public void testArray2CompoundDynamicProperty() {
-        CompassSession session = openSession();
+	@Ignore
+	public void testArray2CompoundDynamicProperty() {
+		CompassSession session = openSession();
 
-        A a = new A();
-        a.id = 1;
-        a.values = new HashMap<DynaKey, DynaValue[]>();
-        a.values.put(new DynaKey("key1", "key2"), new DynaValue[]{
-                new DynaValue(new String[]{"value111", "value112"}, new String[]{"value121", "value122"}),
-                new DynaValue(new String[]{"value211", "value212"}, new String[]{"value221", "value222"})});
+		A a = new A();
+		a.id = 1;
+		a.values = new HashMap<DynaKey, DynaValue[]>();
+		a.values.put(new DynaKey("key1", "key2"), new DynaValue[] {
+				new DynaValue(new String[] { "value111", "value112" },
+						new String[] { "value121", "value122" }),
+				new DynaValue(new String[] { "value211", "value212" },
+						new String[] { "value221", "value222" }) });
 
-        session.save(a);
+		session.save(a);
 
-//        assertEquals(1, session.find("key1:value111").length());
-//        assertEquals(1, session.find("key1:value111").length());
-//        assertEquals(0, session.find("key1:value121").length());
-//        assertEquals(0, session.find("key1:value122").length());
-//        assertEquals(1, session.find("key1:value211").length());
-//        assertEquals(1, session.find("key1:value212").length());
-//        assertEquals(0, session.find("key1:value221").length());
-//        assertEquals(0, session.find("key1:value222").length());
-//
-//        assertEquals(0, session.find("key2:value111").length());
-//        assertEquals(0, session.find("key2:value111").length());
-//        assertEquals(0, session.find("key2:value121").length());
-//        assertEquals(0, session.find("key2:value122").length());
-//        assertEquals(0, session.find("key2:value211").length());
-//        assertEquals(0, session.find("key2:value212").length());
-//        assertEquals(0, session.find("key2:value221").length());
-//        assertEquals(0, session.find("key2:value222").length());
+		// assertEquals(1, session.find("key1:value111").length());
+		// assertEquals(1, session.find("key1:value111").length());
+		// assertEquals(0, session.find("key1:value121").length());
+		// assertEquals(0, session.find("key1:value122").length());
+		// assertEquals(1, session.find("key1:value211").length());
+		// assertEquals(1, session.find("key1:value212").length());
+		// assertEquals(0, session.find("key1:value221").length());
+		// assertEquals(0, session.find("key1:value222").length());
+		//
+		// assertEquals(0, session.find("key2:value111").length());
+		// assertEquals(0, session.find("key2:value111").length());
+		// assertEquals(0, session.find("key2:value121").length());
+		// assertEquals(0, session.find("key2:value122").length());
+		// assertEquals(0, session.find("key2:value211").length());
+		// assertEquals(0, session.find("key2:value212").length());
+		// assertEquals(0, session.find("key2:value221").length());
+		// assertEquals(0, session.find("key2:value222").length());
 
-        session.close();
-    }
+		session.close();
+	}
 }
