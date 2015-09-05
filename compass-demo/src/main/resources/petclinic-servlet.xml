@@ -1,0 +1,264 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/tx 
+     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+     http://www.springframework.org/schema/aop 
+     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+     http://www.springframework.org/schema/context 
+     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+     http://www.springframework.org/schema/mvc
+     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
+	default-lazy-init="true">
+	<context:component-scan base-package="org.compass.sample.petclinic.config" />
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename">
+			<value>messages</value>
+		</property>
+	</bean>
+
+	<!-- ========================= MAPPING DEFINITIONS ========================= -->
+	<!-- - This bean provides explicit View mappings in a resource bundle instead 
+		of the - default InternalResourceViewResolver. It fetches the view mappings 
+		from - localized "views_xx" classpath files, i.e. "/WEB-INF/classes/views.properties" 
+		- or "/WEB-INF/classes/views_de.properties". - - Symbolic view names returned 
+		by Controllers will be resolved by this bean - using the respective properties 
+		file, which defines arbitrary mappings between - view names and resources. -->
+	<bean
+
+		class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
+
+
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+
+
+	<!-- - This bean resolves specific types of exception to corresponding error 
+		views. - The default behaviour of DispatcherServlet is to propagate all exceptions 
+		to the - servlet container: This will happen here with all other types of 
+		exception. -->
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.compass.core.CompassException">dataAccessFailure</prop>
+				<prop key="org.springframework.dao.DataAccessException">dataAccessFailure</prop>
+				<prop key="org.springframework.transaction.TransactionException">dataAccessFailure</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- - This bean is an explicit URL mapper that is used by the "petclinic" 
+		DispatcherServlet - It is used instead of the default BeanNameUrlHandlerMapping. -->
+
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/welcome.htm">clinicController</prop>
+				<prop key="/tutorial.htm">clinicController</prop>
+				<prop key="/spring-tutorial.htm">clinicController</prop>
+				<prop key="/vets.htm">clinicController</prop>
+				<prop key="/findOwners.htm">findOwnersForm</prop>
+				<prop key="/owner.htm">clinicController</prop>
+				<prop key="/addOwner.htm">addOwnerForm</prop>
+				<prop key="/editOwner.htm">editOwnerForm</prop>
+				<prop key="/addPet.htm">addPetForm</prop>
+				<prop key="/editPet.htm">editPetForm</prop>
+				<prop key="/addVisit.htm">addVisitForm</prop>
+				<prop key="/search.htm">searchController</prop>
+				<prop key="/index.htm">indexController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= CONTROLLER DEFINITIONS ========================= -->
+	<bean id="searchController" class="org.compass.spring.web.mvc.CompassSearchController">
+		<property name="compass">
+			<ref bean="compass" />
+		</property>
+		<property name="searchView">
+			<value>search</value>
+		</property>
+		<property name="searchResultsView">
+			<value>search</value>
+		</property>
+		<property name="pageSize">
+			<value>10</value>
+		</property>
+	</bean>
+
+	<bean id="indexController" class="org.compass.spring.web.mvc.CompassIndexController">
+		<property name="compassGps">
+			<ref bean="compassGps" />
+		</property>
+		<property name="indexView">
+			<value>index</value>
+		</property>
+		<property name="indexResultsView">
+			<value>index</value>
+		</property>
+	</bean>
+
+	<!-- - This bean is a MultiActionController that manages general View rendering. 
+		- It uses the "clinicControllerResolver" bean below for method name resolution. -->
+	<bean id="clinicController" class="org.compass.sample.petclinic.web.ClinicController">
+		<property name="methodNameResolver">
+			<ref local="clinicControllerResolver" />
+		</property>
+		<property name="clinic">
+			<ref bean="clinic" />
+		</property>
+	</bean>
+
+	<!-- - This bean is a MethodNameResolver definition for a MultiActionController. 
+		- It maps URLs to methods for the "clinicController" bean. -->
+	<bean id="clinicControllerResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/welcome.htm">welcomeHandler</prop>
+				<prop key="/tutorial.htm">tutorialHandler</prop>
+				<prop key="/spring-tutorial.htm">springTutorialHandler</prop>
+				<prop key="/vets.htm">vetsHandler</prop>
+				<prop key="/owner.htm">ownerHandler</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- - This bean is a SimpleFormController that manages the findOwner use 
+		case. - It uses the "findOwnersValidator" and "clinic" beans. -->
+	<bean id="findOwnersForm" class="org.compass.sample.petclinic.web.FindOwnersForm">
+		<property name="formView">
+			<value>findOwners</value>
+		</property>
+		<property name="selectView">
+			<value>owners</value>
+		</property>
+		<property name="successView">
+			<value>ownerRedirect</value>
+		</property>
+		<property name="clinic">
+			<ref bean="clinic" />
+		</property>
+	</bean>
+
+	<!-- - This bean is a SimpleFormController that manages the addOwner use 
+		case. - It uses the "ownerValidator" and "clinic" beans. -->
+	<bean id="addOwnerForm" class="org.compass.sample.petclinic.web.AddOwnerForm">
+		<property name="formView">
+			<value>ownerForm</value>
+		</property>
+		<property name="successView">
+			<value>redirect:/owner.htm</value>
+		</property>
+		<property name="validator">
+			<ref local="ownerValidator" />
+		</property>
+		<property name="clinic">
+			<ref bean="clinic" />
+		</property>
+	</bean>
+
+	<!-- - This bean is a SimpleFormController that manages the editOwner use 
+		case. - It uses the "ownerValidator" and "clinic" beans. -->
+	<bean id="editOwnerForm" class="org.compass.sample.petclinic.web.EditOwnerForm">
+		<property name="formView">
+			<value>ownerForm</value>
+		</property>
+		<property name="successView">
+			<value>redirect:/owner.htm</value>
+		</property>
+		<property name="validator">
+			<ref local="ownerValidator" />
+		</property>
+		<property name="clinic">
+			<ref bean="clinic" />
+		</property>
+	</bean>
+
+	<!-- - Validator for owner forms, implementing Spring's Validator interface. 
+		- Could also reside in the root application context, as it is generic, - 
+		but is currently just used within Petclinic's web tier. -->
+	<bean id="ownerValidator" class="org.compass.sample.petclinic.validation.OwnerValidator" />
+
+	<!-- - This bean is a SimpleFormController that manages the addPet use case. 
+		- It uses the "petValidator" and "clinic" beans. -->
+	<bean id="addPetForm" class="org.compass.sample.petclinic.web.AddPetForm">
+		<property name="formView">
+			<value>petForm</value>
+		</property>
+		<property name="successView">
+			<value>redirect:/owner.htm</value>
+		</property>
+		<property name="validator">
+			<ref local="petValidator" />
+		</property>
+		<property name="clinic">
+			<ref bean="clinic" />
+		</property>
+	</bean>
+
+
+	<!-- - This bean is a SimpleFormController that manages the editPet use 
+		case. - It uses the "petValidator" and "clinic" beans. -->
+	<bean id="editPetForm" class="org.compass.sample.petclinic.web.EditPetForm">
+		<property name="formView">
+			<value>petForm</value>
+		</property>
+		<property name="successView">
+			<value>redirect:/owner.htm</value>
+		</property>
+		<property name="validator">
+			<ref local="petValidator" />
+		</property>
+		<property name="clinic">
+			<ref bean="clinic" />
+		</property>
+	</bean>
+
+	<!-- - Validator for pet forms, implementing Spring's Validator interface. 
+		- Could also reside in the root application context, as it is generic, - 
+		but is currently just used within Petclinic's web tier. -->
+	<bean id="petValidator" class="org.compass.sample.petclinic.validation.PetValidator" />
+
+	<!-- - This bean is a SimpleFormController that manages the addVisit use 
+		case. - It uses the "visitValidator" and "clinic" beans. -->
+	<bean id="addVisitForm" class="org.compass.sample.petclinic.web.AddVisitForm">
+		<property name="formView">
+			<value>visitForm</value>
+		</property>
+		<property name="successView">
+			<value>redirect:/owner.htm</value>
+		</property>
+		<property name="validator">
+			<ref local="visitValidator" />
+		</property>
+		<property name="clinic">
+			<ref bean="clinic" />
+		</property>
+	</bean>
+
+	<!-- - Validator for visit forms, implementing Spring's Validator interface. 
+		- Could also reside in the root application context, as it is generic, - 
+		but is currently just used within Petclinic's web tier. -->
+	<bean id="visitValidator" class="org.compass.sample.petclinic.validation.VisitValidator" />
+</beans>

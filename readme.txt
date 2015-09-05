@@ -16,12 +16,9 @@ optimization and introduces transaction capabilities to the Search Engine.
 This branch has removed the ant build support  and use Maven instead.
 
 Execute the install-lib.bat at lib/ to install the necessary dependence which is required when building project but not available in the public repository
-
 Have upgraded some dependence's version
-
-
-
 execute maven clean install to build the project.
+Run mvn tomcat7:run cat compass-demo
 
 Good luck.
 

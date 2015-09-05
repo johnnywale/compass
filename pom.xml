@@ -2,13 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>org.compass-project</groupId>
-	<artifactId>compass</artifactId>
+	<artifactId>compass-parent</artifactId>
 	<version>2.3.0-beta1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-
-	<name>compa</name>
+	<packaging>pom</packaging>
+	<name>compass</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -30,453 +28,456 @@
 		<groovy.version>1.7.11</groovy.version>
 		<jdom.version>1.1.3</jdom.version>
 	</properties>
-
-	<dependencies>
-
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.1</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>jotm</groupId>
-			<artifactId>jotm</artifactId>
-			<version>${jotm.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.compass-project</groupId>
-			<artifactId>gae-all</artifactId>
-			<version>1.0</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.compass-project</groupId>
-			<artifactId>gs-all</artifactId>
-			<version>6.6.2</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>tim-concurrent</groupId>
-			<artifactId>collections</artifactId>
-			<version>1.0.2</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.5.11</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-
-
-		<dependency>
-			<groupId>org.codehaus.jettison</groupId>
-			<artifactId>jettison</artifactId>
-			<version>1.2</version>
-			<scope>provided</scope>
-
-		</dependency>
-		<dependency>
-			<groupId>org.apache.velocity</groupId>
-			<artifactId>velocity</artifactId>
-			<version>${velocity.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>ognl</groupId>
-			<artifactId>ognl</artifactId>
-			<version>${ognl.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.bea.wlplatform</groupId>
-			<artifactId>commonj-twm</artifactId>
-			<version>${commonj-twm.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-all</artifactId>
-			<version>${groovy.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jdom</groupId>
-			<artifactId>jdom</artifactId>
-			<version>${jdom.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.7</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>jboss</groupId>
-			<artifactId>jboss-ejb3</artifactId>
-			<version>4.2.1.GA</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-snowball</artifactId>
-			<version>${luceneVersion}</version>
-
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-queries</artifactId>
-			<version>${luceneVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.openejb</groupId>
-			<artifactId>openejb-core</artifactId>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.openejb</groupId>
-					<artifactId>javaee-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.apache.activemq</groupId>
-					<artifactId>activemq-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.apache.geronimo.components</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-			<version>3.1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.resource</groupId>
-			<artifactId>javax.resource-api</artifactId>
-			<version>1.7</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-spellchecker</artifactId>
-			<version>${luceneVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.grails</groupId>
-			<artifactId>grails-core</artifactId>
-			<version>${grails.version}</version>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>cglib</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring</artifactId>
-
-				</exclusion>
-
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.grails</groupId>
-			<artifactId>grails-web</artifactId>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring</artifactId>
-
-				</exclusion>
-
-			</exclusions>
-			<version>${grails.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-jexl</groupId>
-			<artifactId>commons-jexl</artifactId>
-			<scope>provided</scope>
-			<version>1.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<scope>provided</scope>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-analyzers</artifactId>
-			<version>${luceneVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<scope>provided</scope>
-			<version>${jackson.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.openjpa</groupId>
-			<artifactId>openjpa</artifactId>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.geronimo.specs</groupId>
-					<artifactId>*</artifactId>
-
-
-				</exclusion>
-			</exclusions>
-			<version>1.2.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.javassist</groupId>
-			<artifactId>javassist</artifactId>
-
-			<version>3.18.1-GA</version>
-		</dependency>
-		<!-- -->
-
-		<dependency>
-			<groupId>jpox</groupId>
-			<artifactId>jpox-thirdparty</artifactId>
-			<version>${jpox.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>jpox</groupId>
-			<artifactId>jpox-tangosol</artifactId>
-			<scope>provided</scope>
-			<version>${jpox.version}</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>jpox</groupId>
-			<artifactId>jpox</artifactId>
-			<scope>provided</scope>
-			<version>${jpox.version}</version>
-		</dependency>
-		<!-- -->
-
-		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>eclipselink</artifactId>
-			<scope>provided</scope>
-			<version>2.5.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>asm</groupId>
-			<artifactId>asm-all</artifactId>
-			<version>3.3.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.ant</groupId>
-			<artifactId>ant</artifactId>
-			<version>1.9.4</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${spring.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
-
-			<scope>test</scope>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>jaxen</groupId>
-			<artifactId>jaxen</artifactId>
-			<version>1.1.6</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>xmlpull</groupId>
-			<artifactId>xmlpull</artifactId>
-			<version>1.1.3.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.mchange</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.5</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mvel</groupId>
-			<artifactId>mvel2</artifactId>
-			<version>2.2.4.Final</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>pull-parser</groupId>
-			<artifactId>pull-parser</artifactId>
-			<version>2.1.10</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>org.apache.ibatis</groupId>
-			<artifactId>ibatis-sqlmap</artifactId>
-			<version>2.3.4.726</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>cglib</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-
-			</exclusions>
-			<version>${hibernate.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.datanucleus</groupId>
-			<artifactId>datanucleus-core</artifactId>
-			<version>${datanucleus.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.datanucleus</groupId>
-			<artifactId>datanucleus-jpa</artifactId>
-			<version>${datanucleus.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>toplink.essentials</groupId>
-			<artifactId>toplink-essentials</artifactId>
-			<version>${toplink-essentials.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>toplink.essentials</groupId>
-			<artifactId>toplink-essentials-agent</artifactId>
-			<version>${toplink-essentials.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-highlighter</artifactId>
-			<version>${luceneVersion}</version>
-
-		</dependency>
-
-
-		<dependency>
-			<groupId>com.sun.jndi</groupId>
-			<artifactId>fscontext</artifactId>
-			<version>1.2-beta-3</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>com.sun.jndi</groupId>
-			<artifactId>providerutil</artifactId>
-			<version>1.2</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.compass-project</groupId>
+				<artifactId>compass</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>jotm</groupId>
+				<artifactId>jotm</artifactId>
+				<version>${jotm.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.compass-project</groupId>
+				<artifactId>gae-all</artifactId>
+				<version>1.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.compass-project</groupId>
+				<artifactId>gs-all</artifactId>
+				<version>6.6.2</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>tim-concurrent</groupId>
+				<artifactId>collections</artifactId>
+				<version>1.0.2</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.5.11</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+
+
+			<dependency>
+				<groupId>org.codehaus.jettison</groupId>
+				<artifactId>jettison</artifactId>
+				<version>1.2</version>
+				<scope>provided</scope>
+
+			</dependency>
+			<dependency>
+				<groupId>org.apache.velocity</groupId>
+				<artifactId>velocity</artifactId>
+				<version>${velocity.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>ognl</groupId>
+				<artifactId>ognl</artifactId>
+				<version>${ognl.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.bea.wlplatform</groupId>
+				<artifactId>commonj-twm</artifactId>
+				<version>${commonj-twm.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy-all</artifactId>
+				<version>${groovy.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jdom</groupId>
+				<artifactId>jdom</artifactId>
+				<version>${jdom.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>2.7</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.0.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>jboss</groupId>
+				<artifactId>jboss-ejb3</artifactId>
+				<version>4.2.1.GA</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-snowball</artifactId>
+				<version>${luceneVersion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-queries</artifactId>
+				<version>${luceneVersion}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.openejb</groupId>
+				<artifactId>openejb-core</artifactId>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.openejb</groupId>
+						<artifactId>javaee-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.activemq</groupId>
+						<artifactId>activemq-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.components</groupId>
+						<artifactId>*</artifactId>
+					</exclusion>
+				</exclusions>
+				<version>3.1.4</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.resource</groupId>
+				<artifactId>javax.resource-api</artifactId>
+				<version>1.7</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-spellchecker</artifactId>
+				<version>${luceneVersion}</version>
+ 			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>2.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.grails</groupId>
+				<artifactId>grails-core</artifactId>
+				<version>${grails.version}</version>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>cglib</groupId>
+						<artifactId>*</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring</artifactId>
+
+					</exclusion>
+
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.grails</groupId>
+				<artifactId>grails-web</artifactId>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring</artifactId>
+
+					</exclusion>
+
+				</exclusions>
+				<version>${grails.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-jexl</groupId>
+				<artifactId>commons-jexl</artifactId>
+				<scope>provided</scope>
+				<version>1.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<scope>provided</scope>
+				<version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-analyzers</artifactId>
+				<version>${luceneVersion}</version>
+ 			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-core-asl</artifactId>
+				<scope>provided</scope>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>${jackson.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.openjpa</groupId>
+				<artifactId>openjpa</artifactId>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>*</artifactId>
+
+
+					</exclusion>
+				</exclusions>
+				<version>1.2.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.javassist</groupId>
+				<artifactId>javassist</artifactId>
+
+				<version>3.18.1-GA</version>
+			</dependency>
+			<!-- -->
+
+			<dependency>
+				<groupId>jpox</groupId>
+				<artifactId>jpox-thirdparty</artifactId>
+				<version>${jpox.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>jpox</groupId>
+				<artifactId>jpox-tangosol</artifactId>
+				<scope>provided</scope>
+				<version>${jpox.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>jpox</groupId>
+				<artifactId>jpox</artifactId>
+				<scope>provided</scope>
+				<version>${jpox.version}</version>
+			</dependency>
+			<!-- -->
+
+			<dependency>
+				<groupId>org.eclipse.persistence</groupId>
+				<artifactId>eclipselink</artifactId>
+				<scope>provided</scope>
+				<version>2.5.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>asm</groupId>
+				<artifactId>asm-all</artifactId>
+				<version>3.3.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.ant</groupId>
+				<artifactId>ant</artifactId>
+				<version>1.9.4</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>1.4</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+
+				<scope>test</scope>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>jaxen</groupId>
+				<artifactId>jaxen</artifactId>
+				<version>1.1.6</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>xmlpull</groupId>
+				<artifactId>xmlpull</artifactId>
+				<version>1.1.3.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.mchange</groupId>
+				<artifactId>c3p0</artifactId>
+				<version>0.9.5</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mvel</groupId>
+				<artifactId>mvel2</artifactId>
+				<version>2.2.4.Final</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>pull-parser</groupId>
+				<artifactId>pull-parser</artifactId>
+				<version>2.1.10</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>org.apache.ibatis</groupId>
+				<artifactId>ibatis-sqlmap</artifactId>
+				<version>2.3.4.726</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<scope>provided</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>cglib</groupId>
+						<artifactId>*</artifactId>
+					</exclusion>
+
+				</exclusions>
+				<version>${hibernate.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.datanucleus</groupId>
+				<artifactId>datanucleus-core</artifactId>
+				<version>${datanucleus.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.datanucleus</groupId>
+				<artifactId>datanucleus-jpa</artifactId>
+				<version>${datanucleus.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>toplink.essentials</groupId>
+				<artifactId>toplink-essentials</artifactId>
+				<version>${toplink-essentials.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>toplink.essentials</groupId>
+				<artifactId>toplink-essentials-agent</artifactId>
+				<version>${toplink-essentials.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-highlighter</artifactId>
+				<version>${luceneVersion}</version>
+ 			</dependency>
+
+
+			<dependency>
+				<groupId>com.sun.jndi</groupId>
+				<artifactId>fscontext</artifactId>
+				<version>1.2-beta-3</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.sun.jndi</groupId>
+				<artifactId>providerutil</artifactId>
+				<version>1.2</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.8.1</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<repositories>
 
 		<repository>
@@ -554,4 +555,8 @@
 	</build>
 
 
+	<modules>
+		<module>compass</module>
+		<module>compass-demo</module>
+	</modules>
 </project>
