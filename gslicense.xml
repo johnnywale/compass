@@ -1,0 +1,8 @@
+<com>
+  <j_spaces>
+        <kernel>
+        	<!-- can also be set via system property using -Dcom.gs.licensekey -->
+            <licensekey>Sep 1, 2042~A@SrEqdSPbNOSuNPQfNvMU#COMMUNITY^6.0XAPCommunity%UNBOUND</licensekey>
+       </kernel>
+  </j_spaces>
+</com>
