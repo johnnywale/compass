@@ -135,11 +135,13 @@
       <entry name="?*.ProductDerivation" />
       <entry name="?*.json" />
     </wildcardResourcePatterns>
-    <annotationProcessing enabled="false" useClasspath="true" />
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+    </annotationProcessing>
   </component>
-  <component name="CopyrightManager" default="">
-    <module2copyright />
-  </component>
+  <component name="CopyrightManager" default="" />
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
   </component>
@@ -171,36 +173,30 @@
   </component>
   <component name="FacetAutodetectingManager">
     <autodetection-disabled>
-      <facet-type id="web">
-        <modules>
-          <module name="compass" />
-        </modules>
-      </facet-type>
-      <facet-type id="jpa">
-        <modules>
-          <module name="main" />
-          <module name="compass-main">
-            <files>
-              <file url="file://$PROJECT_DIR$/src/main/test/META-INF/persistence.xml" />
-            </files>
-          </module>
-        </modules>
-      </facet-type>
       <facet-type id="hibernate">
         <modules>
+          <module name="compass-main" />
           <module name="main" />
           <module name="sandbox">
             <files>
               <file url="file://$PROJECT_DIR$/src/sandbox/test/org/compass/gps/device/hibernate/scrollable/hibernate3.cfg.xml" />
             </files>
           </module>
-          <module name="compass-main" />
+        </modules>
+      </facet-type>
+      <facet-type id="jpa">
+        <modules>
+          <module name="compass-main">
+            <files>
+              <file url="file://$PROJECT_DIR$/src/main/test/META-INF/persistence.xml" />
+            </files>
+          </module>
+          <module name="main" />
         </modules>
       </facet-type>
       <facet-type id="Spring">
         <modules>
           <module name="compass" />
-          <module name="main" />
           <module name="compass-main">
             <files>
               <file url="file://$PROJECT_DIR$/src/main/test/org/compass/needle/gigaspaces/service/context.xml" />
@@ -214,57 +210,26 @@
               <file url="file://$PROJECT_DIR$/src/main/test/org/compass/spring/test/hibernate/simple/context.xml" />
             </files>
           </module>
+          <module name="main" />
+        </modules>
+      </facet-type>
+      <facet-type id="web">
+        <modules>
+          <module name="compass" />
         </modules>
       </facet-type>
     </autodetection-disabled>
   </component>
   <component name="IdProvider" IDEtalkID="E441679FD1D927792A7A75945B504C2F" />
   <component name="InspectionProjectProfileManager">
-    <profiles>
-      <profile version="1.0" is_locked="false">
-        <option name="myName" value="Project Default" />
-        <option name="myLocal" value="false" />
-        <inspection_tool class="JavaDoc" enabled="true" level="WARNING" enabled_by_default="true">
-          <option name="TOP_LEVEL_CLASS_OPTIONS">
-            <value>
-              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-              <option name="REQUIRED_TAGS" value="" />
-            </value>
-          </option>
-          <option name="INNER_CLASS_OPTIONS">
-            <value>
-              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-              <option name="REQUIRED_TAGS" value="" />
-            </value>
-          </option>
-          <option name="METHOD_OPTIONS">
-            <value>
-              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-              <option name="REQUIRED_TAGS" value="" />
-            </value>
-          </option>
-          <option name="FIELD_OPTIONS">
-            <value>
-              <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
-              <option name="REQUIRED_TAGS" value="" />
-            </value>
-          </option>
-          <option name="IGNORE_DEPRECATED" value="false" />
-          <option name="IGNORE_JAVADOC_PERIOD" value="true" />
-          <option name="IGNORE_DUPLICATED_THROWS" value="false" />
-          <option name="myAdditionalJavadocTags" value="" />
-        </inspection_tool>
-      </profile>
-    </profiles>
-    <option name="PROJECT_PROFILE" value="Project Default" />
-    <option name="USE_PROJECT_PROFILE" value="true" />
-    <version value="1.0" />
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="SERVER PROBLEM" />
-      <item index="1" class="java.lang.String" itemvalue="INFO" />
-      <item index="2" class="java.lang.String" itemvalue="TYPO" />
-      <item index="3" class="java.lang.String" itemvalue="WARNING" />
-      <item index="4" class="java.lang.String" itemvalue="ERROR" />
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="UNUSED ENTRY" />
+      <item index="1" class="java.lang.String" itemvalue="SERVER PROBLEM" />
+      <item index="2" class="java.lang.String" itemvalue="INFO" />
+      <item index="3" class="java.lang.String" itemvalue="TYPO" />
+      <item index="4" class="java.lang.String" itemvalue="WEAK WARNING" />
+      <item index="5" class="java.lang.String" itemvalue="WARNING" />
+      <item index="6" class="java.lang.String" itemvalue="ERROR" />
     </list>
   </component>
   <component name="IssueNavigationConfiguration">
@@ -429,6 +394,49 @@
       </item>
     </group>
   </component>
+  <component name="ProjectCodeStyleSettingsManager">
+    <option name="PER_PROJECT_SETTINGS">
+      <value>
+        <option name="LINE_SEPARATOR" value="&#10;" />
+        <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="15" />
+        <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="0" />
+        <option name="IMPORT_LAYOUT_TABLE">
+          <value>
+            <package name="java" withSubpackages="true" static="false" />
+            <package name="javax" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="" withSubpackages="true" static="false" />
+            <emptyLine />
+            <package name="" withSubpackages="true" static="true" />
+          </value>
+        </option>
+        <option name="JD_P_AT_EMPTY_LINES" value="false" />
+        <JavaCodeStyleSettings>
+          <option name="CLASS_NAMES_IN_JAVADOC" value="3" />
+        </JavaCodeStyleSettings>
+        <XML>
+          <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+        </XML>
+        <ADDITIONAL_INDENT_OPTIONS fileType="groovy">
+          <option name="INDENT_SIZE" value="2" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="gsp">
+          <option name="INDENT_SIZE" value="2" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="scala">
+          <option name="INDENT_SIZE" value="2" />
+          <option name="TAB_SIZE" value="2" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="sql">
+          <option name="INDENT_SIZE" value="2" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="yml">
+          <option name="INDENT_SIZE" value="2" />
+        </ADDITIONAL_INDENT_OPTIONS>
+      </value>
+    </option>
+    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+  </component>
   <component name="ProjectDetails">
     <option name="projectName" value="compass" />
   </component>
@@ -443,41 +451,8 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK" />
   <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="LoadTester - Terracotta" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="emma" />
-      <extension name="snapshooter" />
-      <option name="MAIN_CLASS_NAME" value="org.compass.core.load.simple.LoadTester" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xbootclasspath/p:$PROJECT_DIR$/../../../opt/terracotta/2.7.3/lib/dso-boot/dso-boot-hotspot_osx_150_16.jar  -Dtc.install-root=$PROJECT_DIR$/../../../opt/terracotta/2.7.3  -Dtc.config=src/main/test/org/compass/needle/terracotta/tc-config.xml" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="compass-main" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57369" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="JProfiler">
-        <option name="WINDOW" value="false" />
-        <option name="JVMPI" value="false" />
-        <option name="INTERPRETED" value="false" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#10;additional-options=&#10;snapshots-dir=&#10;" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="LoadTester" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="emma" />
-      <extension name="snapshooter" />
       <option name="MAIN_CLASS_NAME" value="org.compass.core.load.simple.LoadTester" />
       <option name="VM_PARAMETERS" value="-Xmx512m" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -508,11 +483,41 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="LoadTester - Terracotta" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="emma" />
+      <option name="MAIN_CLASS_NAME" value="org.compass.core.load.simple.LoadTester" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xbootclasspath/p:C:/../opt/terracotta/2.7.3/lib/dso-boot/dso-boot-hotspot_osx_150_16.jar  -Dtc.install-root=C:/../opt/terracotta/2.7.3  -Dtc.config=src/main/test/org/compass/needle/terracotta/tc-config.xml" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="compass-main" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="57369" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="JProfiler">
+        <option name="WINDOW" value="false" />
+        <option name="JVMPI" value="false" />
+        <option name="INTERPRETED" value="false" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Profile ">
+        <option name="myExternalizedOptions" value="&#10;additional-options=&#10;snapshots-dir=&#10;" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="false" name="Processor - Terracotta" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="emma" />
-      <extension name="snapshooter" />
       <option name="MAIN_CLASS_NAME" value="org.compass.core.load.simple.Processor" />
-      <option name="VM_PARAMETERS" value="-Xbootclasspath/p:$PROJECT_DIR$/../../../opt/terracotta/2.7.3/lib/dso-boot/dso-boot-hotspot_osx_150_16.jar  -Dtc.install-root=$PROJECT_DIR$/../../../opt/terracotta/2.7.3  -Dtc.config=src/main/test/org/compass/needle/terracotta/tc-config.xml" />
+      <option name="VM_PARAMETERS" value="-Xbootclasspath/p:C:/../opt/terracotta/2.7.3/lib/dso-boot/dso-boot-hotspot_osx_150_16.jar  -Dtc.install-root=C:/../opt/terracotta/2.7.3  -Dtc.config=src/main/test/org/compass/needle/terracotta/tc-config.xml" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -550,7 +555,7 @@
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-Xbootclasspath/p:$PROJECT_DIR$/../../../opt/terracotta/2.7.3/lib/dso-boot/dso-boot-hotspot_osx_150_16.jar  -Dtc.install-root=$PROJECT_DIR$/../../../opt/terracotta/2.7.3  -Dtc.config=src/main/test/org/compass/needle/terracotta/tc-config.xml" />
+      <option name="VM_PARAMETERS" value="-Xbootclasspath/p:C:/../opt/terracotta/2.7.3/lib/dso-boot/dso-boot-hotspot_osx_150_16.jar  -Dtc.install-root=C:/../opt/terracotta/2.7.3  -Dtc.config=src/main/test/org/compass/needle/terracotta/tc-config.xml" />
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
@@ -559,6 +564,7 @@
         <value defaultName="wholeProject" />
       </option>
       <envs />
+      <patterns />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="61783" />
         <option name="TRANSPORT" value="0" />
@@ -596,6 +602,7 @@
         <value defaultName="wholeProject" />
       </option>
       <envs />
+      <patterns />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="52589" />
         <option name="TRANSPORT" value="0" />
@@ -628,25 +635,6 @@
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
-              <option name="branchMap">
-                <map>
-                  <entry key="https://svn.opensymphony.com/svn/compass/README">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                  <entry key="https://svn.opensymphony.com/svn/compass/branches">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                  <entry key="https://svn.opensymphony.com/svn/compass/tags">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                </map>
-              </option>
               <option name="branchUrls">
                 <list>
                   <option value="https://svn.opensymphony.com/svn/compass/README" />
@@ -827,20 +815,6 @@
     </LanguageOptions>
   </component>
   <component name="libraryTable">
-    <library name="Lucene">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-queries.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-analyzers.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-spellchecker.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-core.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-highlighter.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-snowball.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="file://$PROJECT_DIR$/../../../opt/lucene/2.4.1/src/java" />
-      </SOURCES>
-    </library>
     <library name="Ant">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/ant/ant-launcher.jar!/" />
@@ -850,16 +824,24 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="c3p0">
+    <library name="antlr">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/c3p0/c3p0-0.9.0.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/antlr/antlr-2.7.6.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="antlr">
+    <library name="asm">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/antlr/antlr-2.7.6.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/asm/asm-3.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/asm/asm-commons-3.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="c3p0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/c3p0/c3p0-0.9.0.2.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -878,6 +860,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="commonj">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/commonj/commonj-twm.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="dom4j">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/dom4j/dom4j-1.6.1.jar!/" />
@@ -891,12 +880,22 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/../../../opt/eclipselink/1.1.0/jlib/eclipselink-src.zip!/" />
+        <root url="jar://C:/../opt/eclipselink/1.1.0/jlib/eclipselink-src.zip!/" />
       </SOURCES>
     </library>
     <library name="ehcache">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/ehcache/ehcache-1.2.3.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="gae">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/gae/appengine-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/gae/appengine-api-stubs.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/gae/appengine-api-labs.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/gae/appengine-local-runtime.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -911,6 +910,13 @@
         <root url="jar://$PROJECT_DIR$/lib/gigaspaces/reggie.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/gigaspaces/JSpaces.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/gigaspaces/jsk-lib.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="grails">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/grails/grails-web-1.0.2.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -934,7 +940,7 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="file://$PROJECT_DIR$/../../../opt/hibernate/3.2.6/src" />
+        <root url="file://C:/../opt/hibernate/3.2.6/src" />
       </SOURCES>
     </library>
     <library name="hsqldb">
@@ -951,21 +957,10 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="jee">
+    <library name="jackson">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/jta.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/jaxrpc.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/rowset.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/jstl.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/connector.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/jms.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/activation.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/jdbc2_0-stdext.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/jsp-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/xml-apis.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/ejb.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/servlet-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/j2ee/mail.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-core-asl-1.4.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-mapper-asl-1.4.0.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -990,9 +985,63 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="jaxen">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jaxen/jaxen-1.1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="jboss">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/jboss/jboss-ejb3.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="jdo2">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jdo/jdo2-api-2.3-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="jdom">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jdom/jdom.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="jee">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/jta.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/jaxrpc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/rowset.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/jstl.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/connector.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/jms.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/activation.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/jdbc2_0-stdext.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/jsp-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/xml-apis.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/ejb.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/servlet-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/j2ee/mail.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="jettison">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jettison/jettison-1.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="joda">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/joda/joda-time-1.6.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -1013,6 +1062,15 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="jsr223">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jsr223/script-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jsr223/js.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/jsr223/script-js.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="junit">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/junit/junit.jar!/" />
@@ -1027,9 +1085,37 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="Lucene">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-queries.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-analyzers.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-spellchecker.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-core.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-highlighter.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/lucene/lucene-snowball.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://C:/../opt/lucene/2.4.1/src/java" />
+      </SOURCES>
+    </library>
+    <library name="mvel">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/mvel/mvel2-2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="ognl">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/ognl/ognl-2.6.5.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="openejb">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/openejb/openejb-core-3.1.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -1051,10 +1137,24 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="stax">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/stax/stax-api-1.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="sunfsjndi">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/sunfsjndi/providerutil-1.2.1.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/sunfsjndi/fscontext-1.2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="terracotta">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/terracotta/tim-concurrent-collections-1.0.2.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -1074,6 +1174,13 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="woodstox">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/woodstox/wstx-asl-3.2.4.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="xpp">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/xpp/xpp3-1.1.3_8.jar!/" />
@@ -1082,125 +1189,5 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="asm">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/asm/asm-3.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/asm/asm-commons-3.1.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="jsr223">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jsr223/script-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jsr223/js.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jsr223/script-js.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="jaxen">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jaxen/jaxen-1.1.1.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="stax">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/stax/stax-api-1.0.1.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="woodstox">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/woodstox/wstx-asl-3.2.4.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="jdom">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jdom/jdom.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="grails">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/grails/grails-web-1.0.2.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="jettison">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jettison/jettison-1.0.1.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="mvel">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/mvel/mvel2-2.0.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="commonj">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/commonj/commonj-twm.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="jackson">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-core-asl-1.4.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jackson/jackson-mapper-asl-1.4.0.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="terracotta">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/terracotta/tim-concurrent-collections-1.0.2.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="openejb">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/openejb/openejb-core-3.1.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="joda">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/joda/joda-time-1.6.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="jdo2">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jdo/jdo2-api-2.3-SNAPSHOT.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="gae">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/gae/appengine-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/gae/appengine-api-stubs.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/gae/appengine-api-labs.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/gae/appengine-local-runtime.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
   </component>
 </project>
-
